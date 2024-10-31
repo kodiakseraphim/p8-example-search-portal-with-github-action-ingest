@@ -1,0 +1,98 @@
+name: Globus Search Ingest
+on:
+  # Runs on pushes to `main` when changes are made to the `data/` directory.
+  push:
+    paths:
+      - "data/**"
+    branches:
+      - main
+  # Allows manual dispatch via the GitHub Actions UI.
+  workflow_dispatch:
+
+
+# Allow only one concurrent ingest workflow to run at a time.
+concurrency:
+  group: "ingest"
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      #  Check out the repository.
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Set up Node.js for use in the workflow.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      # Install the Globus JavaScript SDK to simplify the ingest script.
+      - run: npm install @globus/sdk
+      # Ingest the data in `./data/ingest.json` to the Globus Search index.
+      - name: Ingest ./data/ingest.json
+        id: ingest
+        uses: actions/github-script@v7
+        env:
+          # Load the Globus-required secrets from the GitHub Actions secrets.
+          CLIENT_SECRET: ${{ secrets.GLOBUS_CLIENT_SECRET }}
+          CLIENT_ID: ${{ secrets.GLOBUS_CLIENT_ID }}
+        with:
+            script: |
+              const { auth, search } = require('@globus/sdk');
+              const fs = require('fs');
+              let config = {};
+              try {
+                // Parse the `static.json` file...
+                config = JSON.parse(fs.readFileSync('./static.json', 'utf8'));
+              } catch (e) {
+                core.setFailed(`Unable to parse static.json: ${e.message}`);
+              }
+
+              // Load the Globus Client ID and Client Secret from the GitHub Action environment.
+              const { CLIENT_SECRET, CLIENT_ID } = process.env
+
+              if (!CLIENT_SECRET || !CLIENT_ID) {
+                core.setFailed('Missing GLOBUS_CLIENT_SECRET or GLOBUS_CLIENT_ID.');
+              }
+
+              // Retrieve the Globus Search index from the `static.json` file.
+              const INDEX = config?.data?.attributes?.globus?.search?.index;
+
+              if (!INDEX) {
+                core.setFailed('Missing globus.search.index in static.json');
+              }
+
+              async function main() {
+                let ingestPayload = null;
+                try {
+                  // Attempt to load the ingest payload from the `./data/ingest.json` file.
+                  ingestPayload = JSON.parse(fs.readFileSync('./data/ingest.json', 'utf8'));
+                } catch (e) {
+                  core.setFailed(`Unable to parse ./data/ingest.json: ${e.message}`);
+                }
+
+                // Retrieve an token from Globus Auth, for the Search Ingest API.
+                const token = await (await auth.oauth2.token.token({
+                  payload: {
+                    scope: 'urn:globus:auth:scope:search.api.globus.org:ingest',
+                    grant_type: 'client_credentials'
+                  },
+                  headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': `Basic ${Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64')}`
+                  }
+                })).json();
+
+                // Using the token, configured index, and ingest payload, submit the ingest request.
+                await search.index.ingest(INDEX, {
+                  payload: ingestPayload,
+                  headers: {
+                    Authorization: `Bearer ${token.access_token}`
+                  }
+                });
+              }
+              
+              // Execute the async ingest function...
+              main();
+              
+              
