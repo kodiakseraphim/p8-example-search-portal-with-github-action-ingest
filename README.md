@@ -1,9 +1,20 @@
-# Example : Serverless Search Portal with GitHub Action Ingest
+# Example: Serverless Search Portal with GitHub Action Ingest
 
 This repository is an example of the [@globus/template-search-portal](https://github.com/globus/template-search-portal)
 
 You can create your own portal with similar functionality by following the [**Creating Your Own Research Search Portal**](https://github.com/globus/template-search-portal?tab=readme-ov-file#creating-your-own-static-research-search-portal) section in the template repository and then referencing the sections below.
 
+
+## Background
+
+This example combines Globus and GitHub concepts to create a search-based portal where the portal configuration and index data are managed in the same repository. For smaller datasets, this can be a simple way of introducing change and access controls to the data in your Globus Search index.
+
+### Core Concepts
+
+- Your search portal is hosted on GitHub Pages, referencing a Globus Search index you manage.
+- By editing a file (`/data/ingest.json`) an ingest request is submitted to your Globus Search index, making new or updated data available in your portal.
+
+**It should be noted that this example is more of a proof-of-concept.** Manually managing the data in your search index in this way won't meet the requirements for many use cases, and may present issues at larger scales, but the concepts introduced here can be used as a starting point.
 
 ## Pre-Requisites
 
