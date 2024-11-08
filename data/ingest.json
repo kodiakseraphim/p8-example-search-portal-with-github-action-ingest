@@ -15,6 +15,7 @@
           "tags": [
             "airport"
           ],
+          "sample": "https://g-fe1c1.fd635.8443.data.globus.org/portal/catalog/dataset_atl/1951.csv",
           "globus": {
             "transfer": {
               "collection": "a6f165fa-aee2-4fe5-95f3-97429c28bf82",
