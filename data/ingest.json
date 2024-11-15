@@ -244,6 +244,28 @@
             }
           }
         }
+      },
+      {
+        "subject": "80cf39f6-ce88-44ef-a7f0-e45fabe77938",
+        "visible_to": [
+          "public"
+        ],
+        "content": {
+          "name": "San Francisco International Airport Climate Data - FROM GIT ACTION",
+          "id": "80cf39f6-ce88-44ef-a7f0-e45fabe77938",
+          "path": "/portal/catalog/dataset_sfo",
+          "tags": [
+            "airport"
+          ],
+          "region": "west",
+          "globus": {
+            "transfer": {
+              "collection": "a6f165fa-aee2-4fe5-95f3-97429c28bf82",
+              "path": "/portal/catalog/dataset_sfo",
+              "type": "directory"
+            }
+          }
+        }
       }
     ]
   }
