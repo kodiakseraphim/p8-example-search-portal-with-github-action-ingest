@@ -10,20 +10,11 @@
         "content": {
           "run-id": "1121124151314",
           "ntracks": "2",
-          "0": {
-            "start-time": "0.00181088",
-            "end-time": "0.00186132",
-            "output-avg-frequency": "1.37393e+08",
-            "pitch-angle": "90.9926",
-            "avg-axial-frequency": "6.59707e+06"
-          },
-          "1": {
-            "start-time": "0.00186132",
-            "end-time": "0.00186237",
-            "output-avg-frequency": "1.4799e+08",
-            "pitch-angle": "-99",
-            "avg-axial-frequency": "0"
-          },
+          "start-time": "0.00181088",
+          "end-time": "0.00186132",
+          "output-avg-frequency": "1.37393e+08",
+          "pitch-angle": "90.9926",
+          "avg-axial-frequency": "6.59707e+06",
           "path": "/portal/catalog/dataset_atl",
           "tags": [],
           "globus": {
