@@ -1,4 +1,4 @@
-name: Transfer files from Box
+name: Transfer index from Globus
 
 on:
   push:
