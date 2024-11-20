@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
   
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54">
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss">
     if (window.trustedTypes && window.trustedTypes.createPolicy) {
       window.trustedTypes.createPolicy('default', {
         createHTML: string => string,
@@ -44,9 +44,9 @@
 
 
 
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54" src="/static/js/jquery.min.js"></script>
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54" src="/static/js/popper.min.js"></script>
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54" src="/static/js/bootstrap.min.js"></script>
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss" src="/static/js/jquery.min.js"></script>
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss" src="/static/js/popper.min.js"></script>
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss" src="/static/js/bootstrap.min.js"></script>
 
   
 </head>
@@ -120,7 +120,7 @@
   </div>
   
 
-<input type="hidden" name="state" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0ZV9pZCI6MTY3NjUwNTUsImV4cCI6MTczMjE0MTUzOX0.dFVffQxf4bjznYZq6k02yIooTE_lX4Su8wxPEnuyTLo" aria-labelledby="existing_org">
+<input type="hidden" name="state" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0ZV9pZCI6MTY3NjUzMzksImV4cCI6MTczMjE0MTkyMn0.JKvIwK3wtNgPbwNfiXet8BIMdU_IZ36MCCoMED-wA8Q" aria-labelledby="existing_org">
 
 
 
@@ -23769,7 +23769,7 @@
 
 
 
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54">
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss">
     $(function () {
       "use strict";
 
@@ -23784,7 +23784,7 @@
     });
   </script>
 
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54">
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss">
     $(document).ready(function () {
       "use strict";
         /* CILogon legal text */
@@ -23831,7 +23831,7 @@
 
 
   
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54">
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss">
     $(document).ready(function () {
       elem = document.getElementById('github_signin_btn');
       elem.addEventListener("click", function() { idpSelectSubmit(156053) });
@@ -23863,7 +23863,7 @@
   Didn&#39;t find your organization? Then use <button id="globusid_signin_link" class="btn btn-link btn-sm p-0">Globus ID to sign in</button>. (<a href="#" role="button" class="btn btn-link btn-sm p-0 d-inline" data-toggle="collapse" data-target="#globusid-info" aria-expanded="false" aria-controls="globusid-info">What&#39;s this?</a>)
 </p>
   
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54">
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss">
     $(document).ready(function () {
       elem = document.getElementById('globusid_signin_link');
       elem.addEventListener("click", function() { idpSelectSubmit(3); });
@@ -23891,7 +23891,7 @@
 
   <footer class="container-md">
     <p class="small text-muted my-3">
-        &copy; 2010-<script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54">document.write(new Date().getFullYear());</script> University of Chicago, Argonne National Laboratory
+        &copy; 2010-<script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss">document.write(new Date().getFullYear());</script> University of Chicago, Argonne National Laboratory
         <a href="https://www.globus.org/legal" class="ml-3">Legal</a>
         <a href="https://www.globus.org/legal/privacy" class="ml-3">Privacy</a>
     </p>
@@ -23899,9 +23899,9 @@
 </body>
 
 
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54" src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54" src="/static/js/selectize-plugin-a11y.js"></script>
-  <script nonce="B6c63LPqfdNr7wRI2aMV80hKT7lt6rvK4FI4ccKaO54">
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss" src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss" src="/static/js/selectize-plugin-a11y.js"></script>
+  <script nonce="hAxYmg3iChp3VWT_nhdMBtIcgnEHjcACwWko2HSeIss">
     function idpSelectSubmit(idpId) {
       document.getElementById('identity_provider').selectize.setValue(idpId);
       document.getElementById('theForm').submit();
