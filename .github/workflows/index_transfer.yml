@@ -1,0 +1,27 @@
+name: Transfer files from Box
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+  - cron: '*/5 * * * *'
+
+jobs:
+  scheduled:
+    runs-on: self-hosted
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v3
+    - name: Fetch latest data
+      run: |-
+        curl -L https://m-6f5b32.548aa.03c0.data.globus.org/sm3723/Index_test/injest_test.json --output \
+        ./data/injest_test.json
+
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.git.yale.edu"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest index from Globus: ${timestamp}" || exit 0
+        git push
