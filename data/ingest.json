@@ -30,7 +30,7 @@
           }],
 
           "path": "/portal/catalog/dataset_atl",
-          "tags": [],
+          "tags": ["test"],
           "globus": {
             "transfer": {
               "collection": "a6f165fa-aee2-4fe5-95f3-97429c28bf82",
